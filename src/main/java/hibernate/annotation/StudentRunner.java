@@ -11,6 +11,7 @@ public class StudentRunner {
         SessionFactory sf=con.buildSessionFactory();
         Session session= sf.openSession();
 
+        // Every session creates connections backend. If you don't close the session, connections stay alive. And then it can be problem for our codes
         session.close();
         sf.close();
 
