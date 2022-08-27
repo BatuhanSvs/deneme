@@ -17,5 +17,14 @@
         <property name="format_sql">true</property>
         <property name="show_sql">true</property>
 
+       <!--
+       if you use these mapping, you don't need to use addAnnotatedClass() method in runner class.
+       you can choose one of them.
+        <mapping class="one_to_one.Student03"/>
+        <mapping class="one_to_one.Diary"/>
+        -->
+
+
+
     </session-factory>
 </hibernate-configuration>

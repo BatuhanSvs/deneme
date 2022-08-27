@@ -11,7 +11,7 @@ public class Student03 {
     private String name;
 
     //you won't see this part in table thank to @Transit annotation
-    @Transient
+    //@Transient
     private int grade;
 
     @OneToOne(mappedBy="student")
