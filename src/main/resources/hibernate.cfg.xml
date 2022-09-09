@@ -24,6 +24,9 @@
         <mapping class="one_to_one.Diary"/>
         -->
 
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
+
 
 
     </session-factory>

@@ -1,9 +1,7 @@
 package embeddable;
 
 
-
 import jakarta.persistence.Embeddable;
-
 
 @Embeddable
 public class Course02 {

@@ -1,9 +1,6 @@
 package one_to_many;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +12,15 @@ public class Student04 {
     private int id;
 
     //with this way we can do our input more functionel
-    @Column(name="std_name",length = 100,nullable=false,unique = true)
+    @Column(name="std_name",length = 100,unique = true)
     private String name;
 
     @Column
     private  int grade;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", orphanRemoval = true, cascade = CascadeType.ALL)
     private List<Book04> bookList = new ArrayList<>();
+
 
     public int getId() {
         return id;
@@ -58,10 +56,10 @@ public class Student04 {
 
     @Override
     public String toString() {
-        return "Student04{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", grade=" + grade +
+        return "Student04 = {" +
+                 id +
+                "," + name +
+                ", " + grade +
                 ", bookList=" + bookList +
                 '}';
     }
